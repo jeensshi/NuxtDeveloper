@@ -164,6 +164,96 @@ http://nodejs.cn/api/
 
 
 
+### Normalize.css
+
+http://necolas.github.io/normalize.css/
+
+
+
+### Mockjs
+
+http://mockjs.com/
+
+生成随机数据，拦截 Ajax 请求
+
 ## Element UI 开发实例
 
 https://panjiachen.github.io/vue-element-admin-site/zh/guide/
+
+
+
+## Hello world
+
+/assets/main.css
+
+```css
+.layout-enter-active, .layout-leave-active {
+    transition: opacity .5s
+}
+.layout-enter, .layout-leave-active {
+    opacity: 0
+}
+.page-enter-active, .page-leave-active {
+    transition: opacity .5s
+}
+.page-enter, .page-leave-active {
+    opacity: 0
+}
+```
+
+/layouts/mylayout.vue
+
+```vue
+<template>
+<el-container>
+  <el-aside width="200px">Aside</el-aside>
+  <el-container>
+    <el-header><nuxt-link to="/">Head</nuxt-link></el-header>
+    <el-main>
+        <nuxt/>
+    </el-main>
+  </el-container>
+</el-container>
+</template>
+<style>
+body {
+  height: 100%;
+}
+</style>
+```
+
+/pages/mypage.vue
+
+```vue
+<template>
+<div><nuxt-link to="/secondpage">main</nuxt-link></div>
+</template>
+<script>
+export default {
+  layout: 'mylayout'
+}
+</script>
+```
+
+/pages/secondpage.vue
+
+```vue
+<template>
+<div><nuxt-link to="/mypage">secondpage</nuxt-link></div>
+</template>
+<script>
+export default {
+  layout: 'mylayout'
+}
+</script>
+```
+
+/nuxt.config.js
+
+```javascript
+export default {
+  layoutTransition: 'layout',
+  transition: 'page',
+}
+```
+
