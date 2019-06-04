@@ -6,7 +6,7 @@
 
 
 
-### ECMA Script 合集
+ECMA Script 合集
 
 https://m.w3cschool.cn/wsqzg/
 
@@ -174,6 +174,12 @@ http://mockjs.com/
 
 生成随机数据，拦截 Ajax 请求
 
+### Json Web Token
+
+https://jwt.io/
+
+用于身份验证
+
 ## Element UI 开发实例
 
 https://panjiachen.github.io/vue-element-admin-site/zh/guide/
@@ -253,5 +259,33 @@ export default {
   layoutTransition: 'layout',
   transition: 'page',
 }
+```
+
+## 使用技巧
+
+### 安装Jquery库
+
+```javascript
+ npm install --save jquery
+```
+
+nuxt.config.js
+
+```
+const webpack = require('webpack')
+module.exports = {
+	build: {
+
+​```
+    plugins: [
+      new webpack.ProvidePlugin({
+        '$': 'jquery'
+      })
+    ]
+},
+plugins: []
+​```
+}
+
 ```
 
