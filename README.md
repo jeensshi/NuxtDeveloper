@@ -271,7 +271,7 @@ export default {
 
 nuxt.config.js
 
-```
+```javascript
 const webpack = require('webpack')
 module.exports = {
 	build: {
