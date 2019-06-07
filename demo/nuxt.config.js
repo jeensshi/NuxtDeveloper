@@ -1,5 +1,6 @@
 import pkg from './package'
 
+const webpack = require('webpack');
 export default {
   mode: 'universal',
   layoutTransition: 'layout',
@@ -60,7 +61,11 @@ export default {
   */
   build: {
     transpile: [/^element-ui/],
-    
+    plugins: [
+      new webpack.ProvidePlugin({
+        '$': 'jquery'
+      })
+    ],
     /*
     ** You can extend webpack config here
     */
